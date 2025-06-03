@@ -6,8 +6,7 @@
   <title>Study Tool - Your Study Companion</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = {
-      darkMode: 'class',
+    tailwind.config = { darkMode: 'class',
       theme: {
         extend: {
           colors: {
@@ -22,13 +21,26 @@
               700: '#202bab',
               800: '#0d1798',
               900: '#000385',
+            },
+            secondary: {
+              50: '#f0f5ff',
+              100: '#e0eafd',
+              200: '#b3cbf7',
+              300: '#8699f0',
+              400: '#5967e9',
+              500: '#4653d6',
+              600: '#333fc3',
+              700: '#202bab',
+              800: '#0d1798',
+              900: '#000385',
             }
-          }
+          },
         }
       }
     }
   </script>
   <style>
+    /* Custom CSS for Animations */
     .hover-float {
       transition: transform 0.3s ease-in-out;
     }
@@ -46,12 +58,6 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    #dark-mode-gif {
-      cursor: pointer;
-      border-radius: 9999px;
-      background-color: transparent;
-    }
   </style>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 font-sans transition-colors duration-300 text-gray-800 dark:text-gray-200">
@@ -62,9 +68,16 @@
       <a href="#" class="text-xl font-semibold text-primary-600 dark:text-primary-400">Study Tool</a>
       <nav class="hidden md:flex space-x-4">
         <a href="#ai-bot" class="hover:text-primary-500 transition-colors">AI Study Bot</a>
+        <!-- Add more nav links as needed -->
       </nav>
       <button id="dark-toggle" class="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500">
-        <img src="05373942e0fcf8d9ae977a61c81a948b.gif" alt="Toggle animation" class="w-10 h-10 transition-transform duration-300 transform hover:scale-110" id="dark-mode-gif">
+        <svg id="sun-icon" class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="5" />
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+        <svg id="moon-icon" class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"/>
+        </svg>
       </button>
     </div>
   </header>
@@ -81,6 +94,7 @@
         <a href="https://www.selfstudys.com/books/cbse-sample-paper/english/6th" class="bg-white text-primary-600 px-6 py-3 rounded-lg shadow hover:shadow-lg transition-all hover-float dark:bg-gray-700 dark:text-primary-300">Sample Paper</a>
       </div>
     </div>
+    <!-- Decorative element (optional) -->
     <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-primary-700 dark:from-primary-900 to-transparent"></div>
   </section>
 
