@@ -1,50 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Study tool - Your Study Companion</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Tool - Your Study Companion</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#f0f5ff',
+              100: '#e0eafd',
+              200: '#b3cbf7',
+              300: '#8699f0',
+              400: '#5967e9',
+              500: '#4653d6',
+              600: '#333fc3',
+              700: '#202bab',
+              800: '#0d1798',
+              900: '#000385',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .hover-float {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .hover-float:hover {
+      transform: translateY(-5px);
+    }
+
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    #dark-mode-gif {
+      cursor: pointer;
+      border-radius: 9999px;
+      background-color: transparent;
+    }
+  </style>
 </head>
-<body class="bg-gray-50 font-sans">
-  <!-- Header -->
-  <header class="bg-blue-600 text-white p-4">
-    <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold">Study tool</h1>
-      <nav class="hidden md:flex">
-        <a href="#ai-bot" class="mx-2 hover:text-blue-200">Do Study With AI Bot</a>
-      </nav>
-    </div>
-  </header>
+<body class="bg-gray-50 dark:bg-gray-900 font-sans transition-colors duration-300 text-gray-800 dark:text-gray-200">
 
-  <!-- Hero Section -->
-  <section class="bg-blue-500 text-white py-20 text-center">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-bold mb-4">Your All-in-One Study tools</h2>
-      <p class="mb-8">Access notes, Get solutions, chat with an AI bot, and find resources to ace your exams.</p>
-      <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
-        <a href="https://www.learncbse.in/cbse-notes/" class="bg-white text-blue-600 px-6 py-2 rounded">Get Notes</a>
-        <a href="https://www.yeschat.ai/gpts-9t557IBxCsP-Study-Buddy-NCERT" class="bg-white text-blue-600 px-6 py-2 rounded">Chat with AI</a>
-        <a href="https://www.learncbse.in/ncert-solutions-2/" class="bg-white text-blue-600 px-6 py-2 rounded">Get Solutions</a>
-        <a href="https://cbsecontent.com/students/" class="bg-white text-blue-600 px-6 py-2 rounded">All Resources</a>
-      </div>
-    </div>
-  </section>
+  <!-- Header -->
+  <header class="bg-white dark:bg-gray-800 shadow-md py-3">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <a href="#" class="text-xl font-semibold text-primary-600 dark:text-primary-400">Study Tool</a>
+      <nav class="hidden md:flex space-x-4">
+        <a href="#ai-bot" class="hover:text-primary-500 transition-colors">AI Study Bot</a>
+      </nav>
+      <button id="dark-toggle" class="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500">
+        <img src="05373942e0fcf8d9ae977a61c81a948b.gif" alt="Toggle animation" class="w-10 h-10 transition-transform duration-300 transform hover:scale-110" id="dark-mode-gif">
+      </button>
+    </div>
+  </header>
 
-  <!-- AI Bot Section -->
-  <section id="ai-bot" class="bg-blue-50 py-12">
-    <div class="container mx-auto text-center px-4">
-      <h3 class="text-2xl font-bold mb-4">Need Help? Chat with Our AI Bot</h3>
-      <p class="mb-8">Get instant answers to your study questions.</p>
-      <a href="https://www.yeschat.ai/gpts-9t557IBxCsP-Study-Buddy-NCERT" class="bg-blue-500 text-white px-6 py-2 rounded">Start Chat</a>
-    </div>
-  </section>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-primary-500 to-primary-700 dark:from-primary-800 dark:to-primary-900 text-white py-24 text-center relative overflow-hidden">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-4xl md:text-5xl font-extrabold mb-6 fade-in" style="animation-delay: 0.2s;">Level Up Your Learning</h2>
+      <p class="text-xl mb-8 fade-in" style="animation-delay: 0.4s;">Unlock your potential with powerful study tools designed to help you succeed.</p>
+      <div class="flex flex-col md:flex-row justify-center gap-4 fade-in" style="animation-delay: 0.6s;">
+        <a href="https://www.learncbse.in/cbse-notes/" class="bg-white text-primary-600 px-6 py-3 rounded-lg shadow hover:shadow-lg transition-all hover-float dark:bg-gray-700 dark:text-primary-300">Get Notes</a>
+        <a href="https://www.yeschat.ai/gpts-9t557IBxCsP-Study-Buddy-NCERT" class="bg-white text-primary-600 px-6 py-3 rounded-lg shadow hover:shadow-lg transition-all hover-float dark:bg-gray-700 dark:text-primary-300">Chat with AI</a>
+        <a href="https://www.learncbse.in/ncert-solutions-2/" class="bg-white text-primary-600 px-6 py-3 rounded-lg shadow hover:shadow-lg transition-all hover-float dark:bg-gray-700 dark:text-primary-300">Get Solutions</a>
+        <a href="https://www.selfstudys.com/books/cbse-sample-paper/english/6th" class="bg-white text-primary-600 px-6 py-3 rounded-lg shadow hover:shadow-lg transition-all hover-float dark:bg-gray-700 dark:text-primary-300">Sample Paper</a>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-primary-700 dark:from-primary-900 to-transparent"></div>
+  </section>
 
-  <!-- Footer -->
-  <footer class="bg-blue-600 text-white py-6">
-    <div class="container mx-auto text-center">
-      <p>&copy; 2025 Study Tools. All rights reserved.</p>
-    </div>
-  </footer>
+  <!-- Features Section -->
+  <section class="py-16 bg-gray-100 dark:bg-gray-800">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <h3 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Unlock Your Potential</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow hover-float">
+          <h4 class="text-xl font-semibold mb-3 text-primary-600 dark:text-primary-400">Comprehensive Notes</h4>
+          <p class="text-gray-600 dark:text-gray-300">Well-organized notes for all your subjects, readily accessible.</p>
+        </div>
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow hover-float">
+          <h4 class="text-xl font-semibold mb-3 text-primary-600 dark:text-primary-400">AI Study Assistant</h4>
+          <p class="text-gray-600 dark:text-gray-300">Get instant, intelligent assistance with our advanced AI bot.</p>
+        </div>
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow hover-float">
+          <h4 class="text-xl font-semibold mb-3 text-primary-600 dark:text-primary-400">Exam Resources</h4>
+          <p class="text-gray-600 dark:text-gray-300">All the resources you need to ace your exams, all in one place.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Bot Section -->
+  <section id="ai-bot" class="py-16 bg-gray-50 dark:bg-gray-800">
+    <div class="container mx-auto px-4 max-w-4xl text-center">
+      <h3 class="text-3xl font-bold mb-4 text-primary-700 dark:text-primary-400">Stuck on a Problem? Chat with Our AI</h3>
+      <p class="mb-8 text-lg text-gray-700 dark:text-gray-300">Get clear, instant answers to all your study questions.</p>
+      <a href="https://www.yeschat.ai/gpts-9t557IBxCsP-Study-Buddy-NCERT" class="inline-block bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg shadow hover:shadow-lg transition-all">Start Chat Now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 dark:bg-gray-800 py-8 mt-8 border-t border-gray-200 dark:border-gray-700">
+    <div class="container mx-auto text-center">
+      <p class="text-sm text-gray-500 dark:text-gray-400">&copy; 2025 Study Tools. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const html = document.documentElement;
+    const toggle = document.getElementById('dark-toggle');
+
+    if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    }
+
+    toggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
 </body>
 </html>
