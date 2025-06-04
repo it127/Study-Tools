@@ -20,15 +20,4 @@ The Study Companion is a web application designed to provide students with resou
 - `index.html`: The main HTML file containing the structure and content of the web application.
 - `README.md`: This file, providing an overview and instructions for the project.
 
-## How to Use
-1. **Clone the Repository:**
-   ```sh
-   https://it127.github.io/Study-Tools/
-   ```
-
-2. **Open the Project:**
-   - Navigate to the project directory:
-     ```sh
-     cd study-companion
-     ```
-   - Open `index.html` in a web browser.
+## Link of this project: https://it127.github.io/Study-Tools/
