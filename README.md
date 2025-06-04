@@ -14,7 +14,6 @@ The Study Companion is a web application designed to provide students with resou
 ## Technologies Used
 - **HTML:** For structuring the web page.
 - **Tailwind CSS:** For styling the web page.
-- **JavaScript:** For handling dark mode functionality.
 
 ## File Structure
 - `index.html`: The main HTML file containing the structure and content of the web application.
